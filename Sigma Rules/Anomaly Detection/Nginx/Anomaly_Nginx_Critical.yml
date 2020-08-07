@@ -1,0 +1,30 @@
+title: Anomaly detection for Nginx
+status: experimental
+description: Detecting suspicious error log events which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/07/24
+logsource:
+  product: nginx
+  category: webserver
+  service: error
+detection:
+    keywords:
+      - "http alloc large header buffer"
+      - "the \"*\" size must be equal to or greater than \"*\""
+      - "http large header free:"
+      - "http large header alloc:"
+      - "http large header copy:"
+      - "client sent too long URI"
+      - "unsafe URI \"*\" was detected"
+      - "client sent invalid \"Destination\" header:"
+      - "SSL renegotiation *"
+      - "\"*\" mp4 atom too large:*"
+      - "client sent invalid chunked body"
+      - "state buffer overflow: * bytes required"
+      - "buffer overflow"      
+    condition: keywords
+falsepositives:
+  - Unknown
+level: Critical

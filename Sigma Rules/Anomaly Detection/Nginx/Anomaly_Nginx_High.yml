@@ -1,0 +1,64 @@
+title: Anomaly detection for Nginx
+status: experimental
+description: Detecting suspicious error log events which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/07/24
+logsource:
+  product: nginx
+  category: webserver
+  service: error
+detection:
+    keywords:
+      - "http invalid header:"
+      - "client sent invalid header:"
+      - "client sent invalid userid cookie \"*\""
+      - "client * sent invalid \"Host\" header \"*\", URL: \"*\""
+      - "zero size buf"
+      - "zero size buf in writer"
+      - "\"*\" must be less than the size of all \"*\" minus one buffer"
+      - "client sent invalid \"Host\" header"
+      - "client sent invalid \"Content-Length\" header"
+      - "rt signal queue overflow recovered"
+      - "auth http server sent invalid response"
+      - "memcached sent invalid key in response \"*\" for key \"*\""
+      - "memcached sent invalid trailer"
+      - "http charset invalid utf *"
+      - "client sent invalid \"Overwrite\" header:"
+      - "client sent invalid header line: \"*\""
+      - "client sent too large request"
+      - "upstream sent invalid header"
+      - "\"*\" mp4 * atom too large"
+      - "escaped URI: \"*\""
+      - "spdy state buffer overflow: * bytes required"
+      - "client intended to send body data larger than declared"
+      - "receive buffer overrun"
+      - "no * for ssl_client_verify"
+      - "request reference counter overflow while processing"
+      - "http2 preread buffer overflow"
+      - "client SSL certificate verify error: (*:*)"
+      - "client violated connection flow control: received DATA frame length *, available window *"
+      - "client violated flow control for stream *: received DATA frame length *, available window *"
+      - "client sent invalid :path header: \"*\""
+      - "upstream sent too large http2 frame: *"
+      - "upstream sent headers frame with invalid length: *"
+      - "upstream sent invalid http2 table index: *"
+      - "upstream sent invalid http2 dynamic table size update: *"
+      - "upstream sent too large http2 header name length"
+      - "upstream sent too large http2 header value length"
+      - "header is too large"
+      - "client sent invalid :scheme header: \"*\""
+      - "client sent invalid host in request line"
+      - "negative size buf in output t:* r:* f:* * *-* * *-*"
+      - "negative size buf in chain writer t:* r:* f:* * *-* * *-*"
+      - "negative size buf in writer t:* r:* f:* * *-* * *-*"
+      - "unexpected \"-\" symbol after \"*\" parameter in \"*\" SSI command"
+      - "too large mp4 * samples size in \"*\""
+      - "too large chunk offset in \"*\""
+      - "no OCSP responder URL in certificate"
+      - "empty host in OCSP responder in certificate"
+    condition: keywords
+falsepositives:
+  - Unknown
+level: High

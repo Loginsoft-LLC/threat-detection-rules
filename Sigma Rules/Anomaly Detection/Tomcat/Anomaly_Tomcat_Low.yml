@@ -1,0 +1,18 @@
+title: Anomaly detection for Apache Tomcat
+status: experimental
+description: Detecting suspicious error log events which may lead to potential security threats
+references:
+  - Internal Research
+author: Loginsoft Research Unit 
+date: 2020/07/21
+logsource:
+  product: Tomcat
+  category: webserver
+detection:
+  keywords:
+    - "IntrospectionUtils: Assert: Illegal params"
+    - "Failed to trigger creation of the GC Daemon thread during Tomcat start to prevent possible memory leaks. This is expected on non-Sun JVMs."
+  condition: keywords
+falsepositives:
+  - Unknown
+level: Low
