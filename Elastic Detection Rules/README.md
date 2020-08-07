@@ -8,6 +8,7 @@ We are almost ready to share rules for few more components soon, stay tuned.
 Documentation will be updated soon at
 http://loginsoftsecurity.gitbook.io/threat-detection
 
-## Reference
+##### Reference
 https://www.elastic.co/blog/elastic-security-opens-public-detection-rules-repo
+
 https://github.com/elastic/detection-rules
