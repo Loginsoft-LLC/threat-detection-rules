@@ -4,12 +4,29 @@ description: Detecting suspicious log events which lead to potential security th
 author: Loginsoft Research Unit
 references:
     - Internal Research
-date: 2020/07/24
+date: 2020/08/12
 logsource:
   product: wildfly
   category: webserver
 detection:
     keywords:
+      - "SSL support has been enabled but no security domain or client/server SSL contexts have been specified"
+      - "Invalid IOR or URL: *"
+      - "*: unescaped \\ at end of component"
+      - "Invalid * URL: *"
+      - "Could not create redirect URI."
+      - "A valid JNDI name must be provided: *"
+      - "Unable to transform URL binding value *"
+      - "Bad type for parameter at *. Expected *, but was *"
+      - "Failed to parse service xml [*]"
+      - "Rejecting call because it is not part of any XTS transaction"
+      - "Cannot get transaction status on handling context *"
+      - "Malformed URL provided for option *"
+      - "Failed to parse * at [*,*]"
+      - "Failed to parse *"
+      - "Failed to destroy component instance *"
+      - "Failed to locate executor service '*'"
+      - "Failed to construct component instance"
       - "attempt to add a Permission to a readonly PermissionCollection"
       - "Shutting down process controller"
       - "Cannot resolve com.mysq.jdbc.ReplicationConnection.ping method. Will use 'SELECT 1' instead."

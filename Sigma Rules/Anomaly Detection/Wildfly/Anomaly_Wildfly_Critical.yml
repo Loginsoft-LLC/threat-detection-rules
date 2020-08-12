@@ -1,0 +1,18 @@
+title: Anomaly detection for wildfly
+status: experimental
+description: Detecting suspicious log events which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/08/12
+logsource:
+  product: wildfly
+  category: webserver
+detection:
+    keywords:
+      - "Error unmarshaling *"
+      - "Error marshaling *"
+    condition: keywords
+falsepositives:
+  - Unknown
+level: Critical
