@@ -1,4 +1,4 @@
-# detection-rules
+# Threat Detection Rules
 Threat Detection &amp; Anomaly Detection rules for popular open-source components. 
 
 This project is one of the projects that our Loginsoft Research & Innovation Unit is working on constantly to help organizations & contriuting to the community.
