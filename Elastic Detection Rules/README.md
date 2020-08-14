@@ -5,8 +5,8 @@ Our rules complements open-source Elastic threat detection rules to detect anoma
 We are almost ready to share rules for few more components soon, stay tuned. 
 
 
-Documentation will be updated soon at
-http://loginsoftsecurity.gitbook.io/threat-detection
+To learn how to use our rules in Elastic have a look at
+https://loginsoftsecurity.gitbook.io/threat-detection/#anomaly-detection-elastic-style
 
 ##### Reference
 https://www.elastic.co/blog/elastic-security-opens-public-detection-rules-repo
