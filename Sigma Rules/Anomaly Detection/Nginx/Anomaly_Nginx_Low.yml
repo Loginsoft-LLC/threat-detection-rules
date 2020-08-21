@@ -1,4 +1,5 @@
 title: Anomaly detection for Nginx
+id: 3c5b7905-8cac-437e-8cf7-05ec8fbb73a0
 status: experimental
 description: Detecting suspicious error log events which may lead to potential security threats
 author: Loginsoft Research Unit
@@ -11,7 +12,7 @@ logsource:
   service: error
 detection:
     keywords:
-      - "peer started SSL renegotiation"
+      - 'peer started SSL renegotiation'
     condition: keywords
 falsepositives:
   - Unknown

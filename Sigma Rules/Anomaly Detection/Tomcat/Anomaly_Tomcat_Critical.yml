@@ -1,4 +1,5 @@
 title: Anomaly detection for Apache Tomcat
+id: e65d67af-644d-4f8f-ac70-d71a1f9f80ff
 status: experimental
 description: Detecting suspicious error log events which lead to potential security threats
 references:
@@ -10,27 +11,27 @@ logsource:
   category: webserver
 detection:
   keywords:
-    - "Suspicious url pattern: \"*\" in context [*] - see section SRV.11.2 of the Servlet specification"
-    - "The war name [*] is invalid. The archive will be ignored."
-    - "Failed authenticate() test ??"
-    - "XML parsing error on file [*]: (line [*], col [*])"
-    - "Unable to determine canonical name of file [*] specified for use with sendfile"
-    - "Sendfile configured to send more data than was available"
-    - "Exception in thread \"*\" java.lang.IllegalArgumentException"
-    - "Failed authenticate() test"
-    - "It is not allowed to configure supportsCredentials=[true] when allowedOrigins=[*]"
-    - "Decoded command line arguments [*] do not match the configured cmdLineArgumentsDecoded pattern [*]"
-    - "Calling hasUserDataPermission()"
-    - "Checking for all roles mode:"
-    - "Connection [*], Stream [*], Unknown pseudo header [*] received"
-    - "Invalid escape character in cookie value"
-    - "Unable to determine the canonical name of the file [*] specified to be used with sendfile"
-    - "Suspicious url pattern: \"*\" in context [*] - see sections 12.1 and 12.2 of the Servlet specification"
-    - "Error loading XML from file [*]"
-    - "Security Violation, attempt to use Restricted Class:"
-    - "Access to class [*] is forbidden. It is a restricted class (implements ContainerServlet interface). A web application must be configured as privileged to be able to load it"
-    - "The decoded command line argument [*] did not match the configured cmdLineArgumentsDecoded pattern [*]"
+    - 'Suspicious url pattern: \"*\" in context [*] - see section SRV.11.2 of the Servlet specification'
+    - 'The war name [*] is invalid. The archive will be ignored'
+    - 'Failed authenticate() test ??'
+    - 'XML parsing error on file [*]: (line [*], col [*])'
+    - 'Unable to determine canonical name of file [*] specified for use with sendfile'
+    - 'Sendfile configured to send more data than was available'
+    - 'Exception in thread \"*\" java.lang.IllegalArgumentException'
+    - 'Failed authenticate() test'
+    - 'It is not allowed to configure supportsCredentials=[true] when allowedOrigins=[*]'
+    - 'Decoded command line arguments [*] do not match the configured cmdLineArgumentsDecoded pattern [*]'
+    - 'Calling hasUserDataPermission()'
+    - 'Checking for all roles mode:'
+    - 'Connection [*], Stream [*], Unknown pseudo header [*] received'
+    - 'Invalid escape character in cookie value'
+    - 'Unable to determine the canonical name of the file [*] specified to be used with sendfile'
+    - 'Suspicious url pattern: \"*\" in context [*] - see sections 12.1 and 12.2 of the Servlet specification'
+    - 'Error loading XML from file [*]'
+    - 'Security Violation, attempt to use Restricted Class:'
+    - 'Access to class [*] is forbidden. It is a restricted class (implements ContainerServlet interface). A web application must be configured as privileged to be able to load it'
+    - 'The decoded command line argument [*] did not match the configured cmdLineArgumentsDecoded pattern [*]'
   condition: keywords
 falsepositives:
   - Unknown
-level: Critical
+level: critical

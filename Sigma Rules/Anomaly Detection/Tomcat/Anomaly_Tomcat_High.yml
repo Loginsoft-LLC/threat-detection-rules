@@ -1,4 +1,5 @@
 title: Anomaly detection for Apache Tomcat
+id: c7d39dfd-e48b-4cb1-81c6-30b4db01e619
 status: experimental
 description: Detecting suspicious error log events which lead to potential security threats
 references:
@@ -10,48 +11,47 @@ logsource:
   category: webserver
 detection:
   keywords:
-    - "[*] could not be completely deleted. The presence of the remaining files may cause problems"
-    - "Overflow error for buffer adding [*] bytes at position [*]"
-    - "Failed to trigger creation of the GC Daemon thread during Tomcat start to prevent possible memory leaks. This is expected on non-Sun JVMs"
-    - "Can't load server.xml from *"
-    - "Secure renegotation is not supported by the SSL library *"
-    - "Restricted class *"
-    - "Invalid method resource injection annotation"
-    - "Illegal JAR entry detected with name *"
-    - "Unable to validate JAR entry with name *"
-    - "The archive [*] is malformed and will be ignored: an entry contains an illegal path [*] which was not expanded to [*] since that is outside of the defined docBase [*]"
-    - "Control character in cookie value, consider BASE64 encoding your value"
-    - "Security Violation, attempt to use Restricted Class:"
-    - "Buffer overflow, no sink *"
-    - "Overflow"
-    - "Unable to load server configuration from [*]"
-    - "Unable to determine umask. It appears Tomcat is running on Windows so skip the umask check."
-    - "Failed to parse value [*] as a valid umask"
-    - "Error using configured location for generated Tomcat embedded code [*]"
-    - "No umask setting was found in system property [*]. However, it appears Tomcat is running on a platform that supports umask. The system property is typically set in CATALINA_HOME/bin/catalina.sh. The Lifecycle listener org.apache.catalina.security.SecurityListener (usually configured in CATALINA_BASE/conf/server.xml) expects a umask at least as restrictive as [*]"
-    - "IntrospectionUtils: SecurityException for * = *"
-    - "Restricted (ContainerServlet) *"
-    - "A WebSocket text frame was received that could not be decoded to UTF-8 because it contained invalid byte sequences"
-    - "[*] not a valid class name for a HostnameVerifier"
-    - "[*] not a valid class name for an SSLSocketFactory"
-    - "An invalid value [*] was specified for the anti click-jacking header"
-    - "Calling hasUserDataPermission()"
-    - "Anti locking context[*] setting docBase to *"
-    - "CORS Preflight request bypassing authentication"
-    - "Class * is not implementing java.security.Principal! Class not added."
-    - "An expanded directory [*] was found with a last modified time that did not match the associated WAR. It will be deleted"
-    - "Unable to retrieve method [*] for resource [*] in container [*] so no cleanup was performed for that resource"
-    - "WebappClassLoader.findClassInternal(*) security exception:"
-    - "FAIL - Invalid context path * was specified"
-    - "FAIL - No context exists for path *" 
-    - "Unable to wrap data, invalid status [*]"
-    - "Rejecting request for *, session * with no CSRF nonce found in request"
-    - "Skipping CSRF nonce-check for GET request to entry point *"
-    - "Unable to unwrap data, invalid status [*]"
-    - "Suspicious URL pattern: [*] in context [*], see sections 12.1 and 12.2 of the Servlet specification"
-    - "Buffer overflow and no sink is set, limit [*] and buffer length [*]"
-    - "error for buffer adding [*] bytes at position [*]"
+    - '[*] could not be completely deleted. The presence of the remaining files may cause problems'
+    - 'Overflow error for buffer adding [*] bytes at position [*]'
+    - 'Failed to trigger creation of the GC Daemon thread during Tomcat start to prevent possible memory leaks. This is expected on non-Sun JVMs'
+    - Can't load server.xml from
+    - 'Secure renegotation is not supported by the SSL library'
+    - 'Restricted class'
+    - 'Invalid method resource injection annotation'
+    - 'Illegal JAR entry detected with name'
+    - 'Unable to validate JAR entry with name'
+    - 'The archive [*] is malformed and will be ignored: an entry contains an illegal path [*] which was not expanded to [*] since that is outside of the defined docBase [*] * consider BASE64 encoding your value'
+    - 'Security Violation, attempt to use Restricted Class:'
+    - 'Buffer overflow, no sink'
+    - 'Overflow'
+    - 'Unable to load server configuration from [*]'
+    - 'Unable to determine umask. It appears Tomcat is running on Windows so skip the umask check'
+    - 'Failed to parse value [*] as a valid umask'
+    - 'Error using configured location for generated Tomcat embedded code [*]'
+    - 'No umask setting was found in system property [*]. However, it appears Tomcat is running on a platform that supports umask. The system property is typically set in CATALINA_HOME/bin/catalina.sh. The Lifecycle listener org.apache.catalina.security.SecurityListener (usually configured in CATALINA_BASE/conf/server.xml) expects a umask at least as restrictive as [*]'
+    - 'IntrospectionUtils: SecurityException for * ='
+    - 'Restricted (ContainerServlet)'
+    - 'A WebSocket text frame was received that could not be decoded to UTF-8 because it contained invalid byte sequences'
+    - '[*] not a valid class name for a HostnameVerifier'
+    - '[*] not a valid class name for an SSLSocketFactory'
+    - 'An invalid value [*] was specified for the anti click-jacking header'
+    - 'Calling hasUserDataPermission()'
+    - 'Anti locking context[*] setting docBase to'
+    - 'CORS Preflight request bypassing authentication'
+    - 'Class * is not implementing java.security.Principal! Class not added.'
+    - 'An expanded directory [*] was found with a last modified time that did not match the associated WAR. It will be deleted'
+    - 'Unable to retrieve method [*] for resource [*] in container [*] so no cleanup was performed for that resource'
+    - 'WebappClassLoader.findClassInternal(*) security exception:'
+    - 'FAIL - Invalid context path * was specified'
+    - 'FAIL - No context exists for path'
+    - 'Unable to wrap data, invalid status [*]'
+    - 'Rejecting request for *, session * with no CSRF nonce found in request'
+    - 'Skipping CSRF nonce-check for GET request to entry point'
+    - 'Unable to unwrap data, invalid status [*]'
+    - 'Suspicious URL pattern: [*] in context [*], see sections 12.1 and 12.2 of the Servlet specification'
+    - 'Buffer overflow and no sink is set, limit [*] and buffer length [*]'
+    - 'error for buffer adding [*] bytes at position [*]'
   condition: keywords
 falsepositives:
   - Unknown
-level: High
+level: high

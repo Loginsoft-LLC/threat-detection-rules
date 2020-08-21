@@ -1,4 +1,5 @@
 title: Anomaly detection for Apache Tomcat
+id: 7b440aa5-2a52-460a-80fc-16ef1ba7e44e
 status: experimental
 description: Detecting suspicious error log events which may lead to potential security threats
 references:
@@ -10,9 +11,9 @@ logsource:
   category: webserver
 detection:
   keywords:
-    - "IntrospectionUtils: Assert: Illegal params"
-    - "Failed to trigger creation of the GC Daemon thread during Tomcat start to prevent possible memory leaks. This is expected on non-Sun JVMs."
+    - 'IntrospectionUtils: Assert: Illegal params'
+    - 'Failed to trigger creation of the GC Daemon thread during Tomcat start to prevent possible memory leaks. This is expected on non-Sun JVMs'
   condition: keywords
 falsepositives:
   - Unknown
-level: Low
+level: low

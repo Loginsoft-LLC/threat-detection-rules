@@ -1,0 +1,22 @@
+title: Anomaly detection for Django
+id: 71dff8da-6003-4b62-b88c-18ffe93a5c42
+status: experimental
+description: Detecting suspicious Django web application framework exceptions which may lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/08/17
+logsource:
+  product: django
+  category: application
+detection:
+    keywords:
+      - 'Cannot convert infinity to long'
+      - 'Invalid \\uXXXX escape'
+      - 'OverflowError: mktime argument out of range'
+      - Something's wrong with '*'
+      - The permission codename '*' is duplicated for model '*.*'
+    condition: keywords
+falsepositives:
+  - Unknown
+level: low

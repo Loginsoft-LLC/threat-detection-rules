@@ -1,0 +1,33 @@
+title: Anomaly detection for Django
+id: 17810aa9-8e83-4368-82f9-0394c1b7713b
+status: experimental
+description: Detecting suspicious Django web application framework exceptions which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/08/17
+logsource:
+  product: django
+  category: application
+detection:
+    keywords:
+      - 32 bit systems can't handle dates after Jan 2038, so we fake it in that case (since we only care about the DST flag here)
+      - 'ManagementForm data is missing or has been tampered'
+      - Attempted access to '*' denied
+      - 'Invalid content_type value:'
+      - 'Error importing authentication backend *: \"*\"'
+      - 'dklen too big'
+      - App with label * isn't available
+      - 'Command * defines both \"*\" and \"*\", which is illegal. Use only'
+      - 'is missing a QuerySet. Define *, *, or override'
+      - 'n too large'
+      - 'Empty static prefix not permitted'
+      - That's the SQL this command wasn't able to run
+      - 'URL is missing a * slash'
+      - 'Flatpage with url * already exists for site'
+      - 'Out of range float values are not JSON compliant:'
+      - 'No file was submitted. Check the encoding type on the form'
+    condition: keywords
+falsepositives:
+  - Unknown
+level: high
