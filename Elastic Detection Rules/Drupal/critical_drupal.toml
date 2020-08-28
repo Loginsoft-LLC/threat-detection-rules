@@ -1,0 +1,20 @@
+[metadata]
+creation_date = "2020/08/26"
+ecs_version = ["1.5.0"]
+maturity = "development"
+updated_date = "2020/08/26"
+[rule]
+author = ["Loginsoft Research Unit"]
+description = "Detecting suspicious Drupal log events of potential security threats"
+index = ["filebeat-*"]
+language = "kuery"
+license = "Elastic License"
+name = "Detecting Anomalies from Drupal logs"
+risk_score = 85
+rule_id = "a013d8c2-225f-4ffc-a1ce-02d2ad2c1502"
+severity = "critical"
+tags = ["drupal"]
+type = "query"
+query = '''
+log.file.path: ("/home/cyber/research/drupal/drupal_access.log" or "/home/cyber/research/drupal/drupal_error.log") and message : (("Argument 2 passed to" and "must be of the type array, string given, called in /var/www/html/core/modules/config/src/Form/ConfigSingleImportForm.php") or ("[#post_render][]" or "[#pre_render][]" or "[#access_callback][]" or '[#lazy_builder][]' or '[#markup]=') or ("destination" and ("[#post_render][]" or "[%23post_render][]" or "%3Fq%3D//" or "%3Fq=//")) or ('destination' and ('%3Fq%3D//' or '%3Fq=//')) or ("Uncaught PHP Exception LogicException\: \"The generic FieldItemNormalizer cannot denormalize string values for \"options\" properties of the \"link\" field") or ("Unexpected file extension in \"phar\:" and "at /var/www/html/core/lib/Drupal/Core/Security/PharExtensionInterceptor.php"))
+'''
