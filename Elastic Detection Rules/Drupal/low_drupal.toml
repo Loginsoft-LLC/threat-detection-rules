@@ -1,0 +1,23 @@
+[metadata]
+creation_date = "2020/09/01"
+ecs_version = ["1.5.0"]
+maturity = "development"
+updated_date = "2020/09/01"
+
+[rule]
+author = ["Loginsoft Research Unit"]
+description = "Detecting suspicious Drupal log events of potential security threats"
+index = ["filebeat-*"]
+language = "kuery"
+license = "Elastic License"
+name = "Detecting suspicious events from Drupal logs (Low severity)"
+risk_score = 19
+rule_id = "5a146f30-a71c-4a95-98ab-83185e690a35"
+severity = "low"
+tags = ["drupal"]
+type = "query"
+
+query = '''
+log.file.path: ("/home/cyber/research/drupal/drupal_access.log" or "/home/cyber/research/drupal/drupal_error.log") and message :("is an invalid email address" or "No route found that matches the Content-Type header" or ("is missing a" and "key"))
+'''
+

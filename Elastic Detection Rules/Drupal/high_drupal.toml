@@ -1,0 +1,23 @@
+[metadata]
+creation_date = "2020/09/01"
+ecs_version = ["1.5.0"]
+maturity = "development"
+updated_date = "2020/09/01"
+
+[rule]
+author = ["Loginsoft Research Unit"]
+description = "Detecting suspicious Drupal log events of potential security threats"
+index = ["filebeat-*"]
+language = "kuery"
+license = "Elastic License"
+name = "Detecting suspicious events from Drupal logs (High Severity)"
+risk_score = 55
+rule_id = "0afc9390-dce3-40f2-be99-03a819479adc"
+severity = "high"
+tags = ["drupal"]
+type = "query"
+
+query = '''
+log.file.path: ("/home/cyber/research/drupal/drupal_access.log" or "/home/cyber/research/drupal/drupal_error.log") and message : ("The provided host name is not valid for this server" or "The cookie expiration time is not valid" or "The callback name is not valid" or "Invalid XML: Detected use of illegal DOCTYPE" or "The list of allowed extensions is not valid, be sure to exclude leading dots and to separate extensions with a comma or space" or "The selected node has an invalid form attribute" or "SSL private key not found:" or "Unsupported HTTP method; must be a string, received" or "Invalid file provided for stream; must be a valid path with valid permissions" or "Illegal placement of DOCTYPE tag. Ignoring:" or "Illegal closing tag at global scope" or "The cookie expiration time is not valid" or "JSON data invalid error:" or "This identifier has illegal characters" or "Warning: Give to trusted roles only; this permission has security implications" or "Invalid 'replace_token' query parameter" or "Missing entity type ID" or "It is potentially insecure to display oEmbed content in a frame that is served from the same domain as your main Drupal site, as this may allow execution of third-party code" or "The content access permissions have not been properly rebuilt" or "Invalid body payload for the relationship" or "The identifier is required if the filter is exposed" or "The provided host name is not valid for this server" or ("The path" and "is either invalid or you do not have access to it") or ("The requested page" and "could not be found") or ("The service file" and "is not valid: it is not an array") or ("The URL" and "is not valid") or ("The cookie string" and "is not valid") or ("The cookie expiration time" and "is not valid") or ("The path" and "has to start with a slash") or ("Argument mode" and "is not valid") or ("The HTTP status code" and "is not valid") or ("Missing bundle entity, entity type" and "entity id") or ("Unsupported HTTP method" and "provided") or ("Illegal attribute name for tag") or ("The selected node has an invalid form attribute") or ("The cookie name" and "contains invalid characters") or ("Method" and "was passed an invalid class name") or ("The path" and "has to start with a slash") )
+'''
+
