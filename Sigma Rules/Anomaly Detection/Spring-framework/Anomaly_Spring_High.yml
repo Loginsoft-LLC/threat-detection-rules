@@ -1,0 +1,54 @@
+title: Anomaly detection for Spring framework
+id: dc3e2af8-b579-4937-9312-fda8f8bffc45
+status: experimental
+description: Detecting suspicious log events which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/09/17
+logsource:
+  product: Spring
+  category: application
+detection:
+    keywords:
+      - 'Cannot access Collection of type [*] - injecting original Collection as-is'
+      - 'Failed to parse selector:'
+      -  SQL error codes for '*' not found
+      - 'Schema resource [*] not found - falling back to XML parsing without schema validation'
+      - 'XStreamMarshaller does not support unmarshalling using SAX XMLReaders'
+      - 'Class not found during deserialization'
+      - 'Failed to parse formatted value'
+      - 'Failed to execute SQL script statement at line * of resource *:'
+      - 'Locale value \"*\" contains invalid characters'
+      - 'Not allowed to accept serialized proxy classes'
+      - 'Locale part \"*\" contains invalid characters'
+      - SQL error codes for '*' not found
+      - 'Ignoring invalid resource path [*]'
+      - 'Session not found for session with id'
+      - 'Failed to get javax.websocket.server.ServerContainer via ServletContext attribute'
+      - 'Sending Method Not Allowed (405)'
+      - 'Failed to evaluate deserialization for type:'
+      - 'Failed to evaluate serialization for type:'
+      - 'Failed to close connection:'
+      - 'Failed to parse WebSocket message to STOMP frame(s)'
+      - 'Failed to calculate hash for resource [*]'
+      - 'Either server or session contains a \".\" which is not allowed by SockJS protocol'
+      - 'Handshake failed due to invalid * header'
+      - 'Unsupported Type class:'
+      - 'Could not rollback Session after failed transaction begin'
+      - 'is not a valid exposed header value'
+      - 'Failed to render script template'
+      - 'Parse attempt failed for value [*]'
+      - 'Failed to read JMSDestination property - skipping'
+      -  Failed to evaluate 'java.class.path' manifest entries
+      - Failed to serialize cache value '*'. Does it implement Serializable?
+      - 'Failed to obtain Resource content length'
+      - 'Could not resolve beans DTD [*]: not found in classpath'
+      - 'Failed to get SSL certificates'
+      - 'Cannot validate individual value for'
+      - 'Unexpected OverflowStrategy:'
+      - 'Unsupported suspending handler method detected:'
+    condition: keywords
+falsepositives:
+  - Unknown
+level: high
