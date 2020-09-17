@@ -1,0 +1,69 @@
+title: Anomaly detection for Asp.Net
+id: 822569af-9133-4eb6-968d-a1f53ada1170
+status: experimental
+description: Detecting suspicious log events which lead to potential security threats
+author: Loginsoft Research Unit
+references:
+    - Internal Research
+date: 2020/09/17
+logsource:
+  product: Asp.Net
+detection:
+    keywords:
+      -  Invalid certificate store location '{*}'
+      - The name '{*}' is not a safe file name, using '{*}' instead
+      -  User profile not available. Using '{*}' as key repository and Windows DPAPI to encrypt keys at rest
+      - 'ValidateAsync failed: unhandled exception was thrown'
+      - 'The request path {*} does not match a supported file type'
+      - 'Certificate validation failed, subject was {*}'
+      - 'Access was denied by the resource owner or by the remote server'
+      - 'The redirect URI is not well-formed. The URI is:'
+      - 'Endpoint {*} contains authorization metadata, but a middleware was not found that supports authorization'
+      - 'Route exceeds the maximum number of allowed segments of 28 and is unable to be processed'
+      - There was an error loading the certificate. The file '{*}' was not found
+      - IdentityResource '{*}' not found
+      - 'More bytes written than specified in the Content-Length header'
+      - 'Application DLL was not found at *. Confirm the application dll is present. Single-file deployments are not supported in IIS'
+      - 'Executable was not found at'
+      - 'CLR worker thread exited prematurely'
+      - 'Security stamp validation failed, rejecting cookie'
+      - 'Failed to validate a security stamp'
+      - 'VerifyUserTokenAsync() failed with purpose: {*} for user {*}'
+      - 'User {*} is locked out'
+      - 'Failed to connect, retry limit exceeded'
+      - 'Attempted to check whether process * was running, but got a permissions error'
+      - 'There was an error trusting the certificate'
+      - 'ValidateAsync failed: the expiration time is invalid'
+      - 'This request uses the HTTP OPTIONS method but does not have an Access-Control-Request-Method header. This request will not be treated as a CORS preflight reques'
+      - 'Illegal frame body length:'
+      - 'Request method * not allowed in CORS policy'
+      - 'Server execution failed with response {*}. For more info, check the server log file in the location specified by the * environment variable'
+      - 'Failed to deserialize antiforgery tokens'
+      -  Request header '{*}' not allowed in CORS policy
+      -  The response could not be cached for this request because the '{*}' did not match the body length
+      -  The correlation cookie value '{*}' did not match the expected value '{*}'
+      - 'The Validated Security Token must be of type JwtSecurityToken, but instead its type is:'
+      - 'Server returned handshake error: {*}'
+      - 'Key ring failed to load during application startup'
+      - 'Unable to make HTTPS ceritificate key trusted across' 
+      - 'Failed to deserialize the component descriptor'
+      - 'Failed to parse the event data when trying to dispatch an event'
+      - 'CORS policy execution failed'
+      - 'No CORS policy found for the specified request'
+      - 'Application .dll was not found at'
+      - 'The CORS protocol does not allow specifying a wildcard (any) origin and credentials at the same time. Configure the policy by listing individual origins if credentials needs to be supported'
+      - 'Found malformed end component comment at'
+      - 'Possible EventEmitter memory leak detected. * added. Use emitter.setMaxListeners() to'
+      - 'Unable to make HTTPS certificate key trusted across security partitions'
+      - 'An error occurred reading the client certificate'
+      -  Encrypting using a null encryptor; secret information isn't being protected
+      - 'Key * was revoked. Unprotect operation cannot proceed'
+      - 'As of \"*\", the heartbeat has been running for \"*\" which is longer than \"*\". This could be caused by thread pool starvation'
+      - 'Not https, skipping certificate authentication'
+      - 'Antiforgery validation failed with message'
+      - 'User password validation failed: *'
+      - 'Assertion failed - heap is currently locked'
+    condition: keywords
+falsepositives:
+  - Unknown
+level: high
